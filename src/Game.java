@@ -8,19 +8,20 @@ import java.util.Scanner;
 public class Game {
     public static void run() throws Exception {
         System.out.println("Welcome to my Text Adventure");
-        System.out.println("What is your name, traveler?");
+        System.out.println("What's your name?");
 
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        System.out.println("Good luck," + name);
+        System.out.println("Fuck you!," + name);
 
         System.out.println("[1] Pick up Sword");
         System.out.println("[2] Pick up mallet");
         String weapon = scanner.nextLine();
-        if (weapon.equals ("1")) {
-            System.out.println("That's a fine sword!");
-        } else if (weapon.equals("2")) {
-            System.out.println("Thats a bigass mallet!");
+        int weaponNum = Integer.valueOf(weapon);
+        if (weaponNum == 1) {
+            System.out.println("What is that shit?");
+        } else if (weaponNum == 2) {
+            System.out.println("What the shit are you going to do with a bigass hammer?");
         } else {
             throw new Exception("Invalid weapon.");
         }
@@ -28,9 +29,10 @@ public class Game {
         System.out.println("[1] Enter Forest");
         System.out.println("[2] Enter tunnel");
         String area = scanner.nextLine();
-        if (area.equals ("1")) {
-            System.out.printf("Entering the forest...");
-        } else if (area.equals("2")) {
+        int areaNum = Integer.valueOf(area);
+        if (areaNum == 1) {
+            System.out.println("Entering the forest...");
+        } else if (areaNum == 2) {
             System.out.println("Entering tunnel...");
         } else {
             throw new Exception("Invalid area");

@@ -15,5 +15,11 @@ public class Game {
         player.chooseArea();
     }
 
+    static String nextLine() {
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        if (s.startsWith("/"))
+    }
+
 
 }

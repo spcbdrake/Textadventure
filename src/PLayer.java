@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -7,11 +8,12 @@ public class PLayer {
     String name;
     String weapon;
     String area;
+    ArrayList items = new ArrayList();
 
     void chooseName() {
         System.out.println("What's your name?");;
         name = Game.nextLine();
-        System.out.println("Fuck you!," + name);
+        System.out.println("Good Luck ," + name);
     }
 
     void chooseWeapon() throws Exception {
@@ -20,9 +22,9 @@ public class PLayer {
         weapon = Game.nextLine();
         int weaponNum = Integer.valueOf(weapon);
         if (weaponNum == 1) {
-            System.out.println("What is that shit?");
+            System.out.println("A fine weapon!");
         } else if (weaponNum == 2) {
-            System.out.println("What the shit are you going to do with that bigass hammer?");
+            System.out.println("Thats a pretty hefty hammer!");
         } else {
             throw new Exception("Invalid weapon.");
         }
@@ -39,6 +41,15 @@ public class PLayer {
             System.out.println("Entering tunnel...");
         } else {
             throw new Exception("Invalid area");
+        }
+    }
+
+    void findItem(String item) {
+        System.out.println("Found item! Pick it up? [y/n]");
+        String s = Game.nextLine();
+        if (s.equals("y")) {
+            System.out.println("You found a " + item);
+            items.add(item);
         }
     }
 }

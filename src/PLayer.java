@@ -9,17 +9,15 @@ public class PLayer {
     String area;
 
     void chooseName() {
-        System.out.println("What's your name?");
-        Scanner scanner = new Scanner(System.in);
-        name = scanner.nextLine();
+        System.out.println("What's your name?");;
+        name = Game.nextLine();
         System.out.println("Fuck you!," + name);
     }
 
     void chooseWeapon() throws Exception {
         System.out.println("[1] Pick up Sword");
         System.out.println("[2] Pick up mallet");
-        Scanner scanner = new Scanner(System.in);
-        weapon = scanner.nextLine();
+        weapon = Game.nextLine();
         int weaponNum = Integer.valueOf(weapon);
         if (weaponNum == 1) {
             System.out.println("What is that shit?");
@@ -33,8 +31,7 @@ public class PLayer {
     void chooseArea() throws Exception {
         System.out.println("[1] Enter Forest");
         System.out.println("[2] Enter tunnel");
-        Scanner scanner = new Scanner(System.in);
-        area = scanner.nextLine();
+        area = Game.nextLine();
         int areaNum = Integer.valueOf(area);
         if (areaNum == 1) {
             System.out.println("Entering the forest...");

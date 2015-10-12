@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Game {
     static PLayer player;
 
-    public static void run() throws Exception {
+    public static void main(String[] args) throws Exception {
         System.out.println("Welcome to my Text Adventure");
         player = new PLayer();
 

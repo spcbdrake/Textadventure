@@ -4,16 +4,20 @@ import java.util.Scanner;
 /**
  * Created by benjamindrake on 10/9/15.
  */
-public class PLayer {
-    String name;
+public class PLayer extends Character {
     String weapon;
     String area;
     ArrayList items = new ArrayList();
 
+    public PLayer() {
+        health = 100;
+        damage = 20;
+    }
+
     void chooseName() {
-        System.out.println("What's your name?");;
+        System.out.println("What's your name?");
         name = Game.nextLine();
-        System.out.println("Good Luck ," + name);
+        System.out.println(String.format("Good luck, %s", name));
     }
 
     void chooseWeapon() throws Exception {
@@ -48,7 +52,7 @@ public class PLayer {
         System.out.println("Found item! Pick it up? [y/n]");
         String s = Game.nextLine();
         if (s.equals("y")) {
-            System.out.println("You found a " + item);
+            System.out.println(String .format("You found a %s", item));
             items.add(item);
         }
     }

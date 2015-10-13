@@ -1,5 +1,3 @@
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 import java.util.Scanner;
 
 /**
@@ -12,12 +10,15 @@ public class Game {
         System.out.println("Welcome to my Text Adventure");
         player = new PLayer();
 
-        while (true) {
-            player.chooseName();
-            player.chooseWeapon();
-            player.chooseArea();
-            player.findItem("Shield");
-        }
+
+        player.chooseName();
+        player.chooseWeapon();
+        player.chooseArea();
+        player.findItem("Shield");
+
+        Enemy ogre = new Enemy("Ogre", 50 ,5);
+        player.battle(ogre);
+
     }
     static String nextLine() {
         Scanner scanner = new Scanner(System.in);

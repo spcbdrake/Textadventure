@@ -16,7 +16,11 @@ public class Game {
         player.chooseArea();
         player.findItem("Shield");
 
-        Enemy ogre = new Enemy("Ogre", 50 ,5);
+        Weapon ogreWeapon = new Weapon();
+        ogreWeapon.name = "Club";
+        ogreWeapon.damage = 5;
+        Enemy ogre = new Enemy("Ogre", 50 ,5, ogreWeapon);
+
         player.battle(ogre);
 
     }

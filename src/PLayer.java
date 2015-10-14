@@ -5,7 +5,6 @@ import java.util.Scanner;
  * Created by benjamindrake on 10/9/15.
  */
 public class PLayer extends Character {
-    String weapon;
     String area;
     ArrayList items = new ArrayList();
 
@@ -22,16 +21,20 @@ public class PLayer extends Character {
 
     void chooseWeapon() throws Exception {
         System.out.println("[1] Pick up Sword");
-        System.out.println("[2] Pick up mallet");
-        weapon = Game.nextLine();
-        int weaponNum = Integer.valueOf(weapon);
+        System.out.println("[2] Pick up Warhammer");
+        int weaponNum = Integer.valueOf(Game.nextLine());
         if (weaponNum == 1) {
-            System.out.println("A fine weapon!");
+            weapon = new Weapon();
+            weapon.name = "Sword";
+            weapon.damage = 10;
         } else if (weaponNum == 2) {
-            System.out.println("Thats a pretty hefty hammer!");
+            weapon= new Weapon();
+            weapon.name = "Warhammer";
+            weapon.damage = 10;
         } else {
-            throw new Exception("Invalid weapon.");
+            throw new Exception("That is not a weapon!");
         }
+        System.out.println(String.format("That's a fine %s!", weapon.name.toLowerCase()));
     }
 
     void chooseArea() throws Exception {
@@ -44,7 +47,7 @@ public class PLayer extends Character {
         } else if (areaNum == 2) {
             System.out.println("Entering tunnel...");
         } else {
-            throw new Exception("Invalid area");
+            throw new Exception("You can't go there!");
         }
     }
 

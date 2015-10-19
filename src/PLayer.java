@@ -6,7 +6,7 @@ import java.util.Scanner;
  */
 public class PLayer extends Character {
     String area;
-    ArrayList items = new ArrayList();
+    ArrayList<String> items = new ArrayList();
 
     public PLayer() {
         health = 100;
